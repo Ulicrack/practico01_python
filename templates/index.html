@@ -1,0 +1,15 @@
+<!-- 
+Ruta /:
+    Muestra una lista de ciudades disponibles como enlaces.
+    Cada enlace lleva a /clima?ciudad=Nombre, donde Nombre es una ciudad predefinida.
+-->
+{% extends 'layout.html' %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block body %}
+    <h1>Lista de ciudades</h1>
+    {% for ciudad in ciudades %}
+        <li><a href="/clima?ciudad={{ciudad}}">{{ciudad}}</a></li>
+    {% endfor%}
+{% endblock %}
