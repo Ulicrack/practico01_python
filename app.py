@@ -41,7 +41,8 @@ def ciudad():
     return render_template(
         "clima.html",
         listado_ciudades = ciudades,
-        datos = ciudad
+        datos = ciudad,
+        ciudad_elegida = elegido
     )
 
 
