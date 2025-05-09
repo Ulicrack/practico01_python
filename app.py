@@ -44,3 +44,32 @@ def ciudad():
         datos = ciudad,
         ciudad_elegida = elegido
     )
+
+
+""" 
+@app.route("/clima")
+def ciudad(nombre):
+    # /users?cantidad=2&pagina=10
+    
+    ciudad_data = ciudades.get(nombre)
+    if ciudad_data:
+        return render_template("clima.html", nombre=nombre, datos=ciudad_data)
+    else:
+        return "Ciudad no encontrada", 404
+ """
+
+"""
+
+@app.route("/clima")
+def usuarios():
+    # /users?cantidad=2&pagina=10
+    print(request.method)
+    cant = request.args.get('cantidad','5', int)
+    response = requests.get(f"https://randomuser.me/api/?results={cant}")
+    data = response.json()
+    user_list = data['results']
+    return render_template(
+        "clima.html",
+        listado_usuarios = user_list
+    )
+"""
